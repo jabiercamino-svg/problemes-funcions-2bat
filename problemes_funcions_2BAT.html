@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problemes de Funcions - 2n BAT</title>
+    
+    <!-- MathJax per fórmules matemàtiques -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f8f9fa;
+            line-height: 1.7;
+        }
+        
+        h1 {
+            color: #1a1a1a;
+            text-align: center;
+            border-bottom: 4px solid #2c3e50;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            font-size: 2.2em;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        /* Caixa per a l'enunciat del problema */
+        .problema {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            color: white;
+        }
+        
+        .numero-problema {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            background-color: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        .enunciat {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+        
+        /* Caixa per als apartats */
+        .apartats {
+            background-color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+        }
+        
+        .apartat {
+            margin: 15px 0;
+            padding: 10px;
+            font-size: 1.05em;
+        }
+        
+        .apartat strong {
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        
+        /* Espai per respondre */
+        .espai-resposta {
+            border: 2px dashed #bdc3c7;
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 10px 0 10px 30px;
+            border-radius: 5px;
+            min-height: 60px;
+        }
+        
+        /* Secció de solucions */
+        .seccio-solucions {
+            margin-top: 60px;
+            page-break-before: always;
+        }
+        
+        .solucio-problema {
+            background-color: #e8f5e9;
+            border-left: 6px solid #4caf50;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .solucio-titol {
+            color: #2e7d32;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4caf50;
+        }
+        
+        .solucio-apartat {
+            margin: 25px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        
+        .solucio-apartat-titol {
+            color: #1b5e20;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .pas {
+            margin: 15px 0;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .explicacio {
+            background-color: #e3f2fd;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #2196f3;
+            font-style: italic;
+        }
+        
+        .resultat-final {
+            background-color: #fff9c4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 2px solid #fbc02d;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #f57f17;
+        }
+        
+        /* Estils per MathJax */
+        .MathJax {
+            font-size: 1.1em !important;
+        }
+        
+        @media print {
+            .problema, .apartats, .solucio-problema {
+                page-break-inside: avoid;
+            }
+            .seccio-solucions {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Problemes de Funcions - 2n Batxillerat</h1>
+
+    <!-- ========== PROBLEMA 1 ========== -->
+    <div class="problema">
+        <div class="numero-problema">Problema 1</div>
+        <div class="enunciat">
+            Una empresa de tecnologia llança una nova aplicació. El nombre d'usuaris actius diaris, en milers, ve donat per la funció:
+            \[f(x) = \frac{120x}{x^2 + 3x + 9}\]
+            on \(x \geq 1\) representa el temps en mesos des del llançament.
+        </div>
+    </div>
+    
+    <div class="apartats">
+        <div class="apartat">
+            <strong>a)</strong> Quants usuaris actius diaris hi havia el primer mes?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>b)</strong> Calcula la taxa de variació mitjana del nombre d'usuaris entre el mes 1 i el mes 4.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>c)</strong> Estudia si la funció té asímptotes horitzontals i interpreta'n el significat.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>d)</strong> En quin mes s'espera que hi hagi el màxim nombre d'usuaris actius diaris?
+            <div class="espai-resposta"></div>
+        </div>
+    </div>
+
+    <!-- ========== PROBLEMA 2 ========== -->
+    <div class="problema">
+        <div class="numero-problema">Problema 2</div>
+        <div class="enunciat">
+            El benefici mensual d'una empresa de fabricació de mobles, en milers d'euros, ve donat per:
+            \[B(x) = -2x^2 + 40x - 50\]
+            on \(x\) representa el nombre de mobles venuts (en desenes).
+        </div>
+    </div>
+    
+    <div class="apartats">
+        <div class="apartat">
+            <strong>a)</strong> Calcula la taxa de variació mitjana del benefici quan es venen entre 5 i 8 desenes de mobles.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>b)</strong> Determina el nombre de mobles que s'han de vendre per maximitzar el benefici.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>c)</strong> Quin és el benefici màxim que pot obtenir l'empresa?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>d)</strong> Estudia els intervals de creixement i decreixement del benefici.
+            <div class="espai-resposta"></div>
+        </div>
+    </div>
+
+    <!-- ========== PROBLEMA 3 ========== -->
+    <div class="problema">
+        <div class="numero-problema">Problema 3</div>
+        <div class="enunciat">
+            La temperatura d'un forn industrial durant un procés de cocció ve donada per:
+            \[T(t) = \begin{cases} 
+            50t + 20, & \text{si } 0 \leq t \leq 4 \\
+            300 - 20(t-4)^2, & \text{si } t > 4
+            \end{cases}\]
+            on \(T\) es mesura en graus Celsius i \(t\) en hores.
+        </div>
+    </div>
+    
+    <div class="apartats">
+        <div class="apartat">
+            <strong>a)</strong> Quina és la temperatura inicial del forn?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>b)</strong> Estudia la continuïtat de la funció en \(t = 4\).
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>c)</strong> Calcula la taxa de variació instantània de la temperatura a \(t = 5\) hores.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>d)</strong> En quin moment la temperatura comença a disminuir?
+            <div class="espai-resposta"></div>
+        </div>
+    </div>
+
+    <!-- ========== PROBLEMA 4 ========== -->
+    <div class="problema">
+        <div class="numero-problema">Problema 4</div>
+        <div class="enunciat">
+            Una pel·lícula s'estrena als cinemes. Els ingressos setmanals, en milers d'euros, es poden modelar amb:
+            \[f(x) = 500e^{-0{,}2x}\]
+            on \(x\) representa el nombre de setmanes des de l'estrena.
+        </div>
+    </div>
+    
+    <div class="apartats">
+        <div class="apartat">
+            <strong>a)</strong> Quins van ser els ingressos la primera setmana?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>b)</strong> Calcula la taxa de variació mitjana dels ingressos entre la setmana 2 i la setmana 5.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>c)</strong> Quina és la taxa de decreixement dels ingressos a la setmana 3?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>d)</strong> Estudia el comportament dels ingressos a llarg termini.
+            <div class="espai-resposta"></div>
+        </div>
+    </div>
+
+    <!-- ========== PROBLEMA 5 ========== -->
+    <div class="problema">
+        <div class="numero-problema">Problema 5</div>
+        <div class="enunciat">
+            L'altura d'una planta, en centímetres, es pot expressar segons la funció:
+            \[h(t) = 5\sqrt{t + 1} + 2\]
+            on \(t\) és el temps en setmanes des de la plantació (\(t \geq 0\)).
+        </div>
+    </div>
+    
+    <div class="apartats">
+        <div class="apartat">
+            <strong>a)</strong> Quina altura tenia la planta en el moment de plantar-la?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>b)</strong> Calcula la taxa de creixement de la planta a la setmana 8.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>c)</strong> Estudia si la funció és sempre creixent i justifica la resposta.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>d)</strong> Calcula la taxa de variació mitjana d'altura entre la setmana 0 i la setmana 15.
+            <div class="espai-resposta"></div>
+        </div>
+    </div>
+
+    <!-- ========== PROBLEMA 6 ========== -->
+    <div class="problema">
+        <div class="numero-problema">Problema 6</div>
+        <div class="enunciat">
+            El nombre de bacteris en un cultiu, en milions, ve donat per la funció:
+            \[N(t) = \frac{8t + 16}{t + 2}\]
+            on \(t \geq 0\) representa el temps en hores.
+        </div>
+    </div>
+    
+    <div class="apartats">
+        <div class="apartat">
+            <strong>a)</strong> Quants bacteris hi havia inicialment?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>b)</strong> Estudia l'existència d'asímptotes horitzontals i interpreta'n el significat.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>c)</strong> Calcula la derivada i estudia el creixement de la població.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>d)</strong> Troba si hi ha algun moment en què la taxa de creixement sigui màxima.
+            <div class="espai-resposta"></div>
+        </div>
+    </div>
+
+    <!-- ========== PROBLEMA 7 ========== -->
+    <div class="problema">
+        <div class="numero-problema">Problema 7</div>
+        <div class="enunciat">
+            La velocitat d'un vehicle elèctric durant una prova d'acceleració ve donada per:
+            \[v(t) = 30(1 - e^{-0{,}5t})\]
+            on \(v\) es mesura en m/s i \(t\) en segons (\(t \geq 0\)).
+        </div>
+    </div>
+    
+    <div class="apartats">
+        <div class="apartat">
+            <strong>a)</strong> Quina és la velocitat inicial del vehicle?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>b)</strong> Calcula l'acceleració del vehicle als 2 segons.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>c)</strong> Quina és la velocitat màxima que pot assolir el vehicle?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>d)</strong> Estudia si l'acceleració és sempre positiva i interpreta el resultat.
+            <div class="espai-resposta"></div>
+        </div>
+    </div>
+
+    <!-- ========== PROBLEMA 8 ========== -->
+    <div class="problema">
+        <div class="numero-problema">Problema 8</div>
+        <div class="enunciat">
+            El cost de producció d'un article, en euros, ve determinat per:
+            \[C(x) = 0{,}01x^3 - 0{,}6x^2 + 15x + 200\]
+            on \(x\) representa el nombre d'articles produïts (\(0 \leq x \leq 50\)).
+        </div>
+    </div>
+    
+    <div class="apartats">
+        <div class="apartat">
+            <strong>a)</strong> Quin és el cost fix de producció (quan no es produeix cap article)?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>b)</strong> Calcula el cost marginal quan es produeixen 20 articles.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>c)</strong> Per a quina quantitat d'articles el cost marginal és mínim?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>d)</strong> Calcula la taxa de variació mitjana del cost entre 10 i 15 articles.
+            <div class="espai-resposta"></div>
+        </div>
+    </div>
+
+    <!-- ========== PROBLEMA 9 ========== -->
+    <div class="problema">
+        <div class="numero-problema">Problema 9</div>
+        <div class="enunciat">
+            La concentració d'un medicament en sang, en mg/L, després de l'administració ve donada per:
+            \[C(t) = \begin{cases} 
+            4t^2, & \text{si } 0 \leq t \leq 2 \\
+            \frac{32}{t}, & \text{si } t > 2
+            \end{cases}\]
+            on \(t\) és el temps en hores després de l'administració.
+        </div>
+    </div>
+    
+    <div class="apartats">
+        <div class="apartat">
+            <strong>a)</strong> Estudia la continuïtat de la funció en \(t = 2\).
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>b)</strong> Quina és la concentració màxima del medicament?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>c)</strong> Calcula la taxa de variació de la concentració a les 4 hores.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>d)</strong> Quan baixa la concentració per sota de 2 mg/L?
+            <div class="espai-resposta"></div>
+        </div>
+    </div>
+
+    <!-- ========== PROBLEMA 10 ========== -->
+    <div class="problema">
+        <div class="numero-problema">Problema 10</div>
+        <div class="enunciat">
+            El preu de venda d'un producte tecnològic, en euros, en funció del temps des del seu llançament ve donat per:
+            \[P(t) = 800 - 120\ln(t + 1)\]
+            on \(t \geq 0\) representa el temps en mesos.
+        </div>
+    </div>
+    
+    <div class="apartats">
+        <div class="apartat">
+            <strong>a)</strong> Quin era el preu del producte en el moment del llançament?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>b)</strong> Calcula la taxa de variació mitjana del preu entre el mes 0 i el mes 6.
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>c)</strong> A quin ritme està disminuint el preu als 11 mesos del llançament?
+            <div class="espai-resposta"></div>
+        </div>
+        
+        <div class="apartat">
+            <strong>d)</strong> Estudia si el preu del producte pot arribar a ser zero.
+            <div class="espai-resposta"></div>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!-- SECCIÓ DE SOLUCIONS                       -->
+    <!-- ========================================= -->
+    
+    <div class="seccio-solucions">
+        <h2>SOLUCIONS DELS PROBLEMES</h2>
+
+        <!-- SOLUCIÓ PROBLEMA 1 -->
+        <div class="solucio-problema">
+            <div class="solucio-titol">SOLUCIÓ PROBLEMA 1</div>
+            
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat a) Usuaris el primer mes</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Hem de calcular \(f(1)\) substituint \(x = 1\) a la funció:
+                    \[f(1) = \frac{120 \cdot 1}{1^2 + 3 \cdot 1 + 9}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem el denominador:
+                    \[1^2 + 3 \cdot 1 + 9 = 1 + 3 + 9 = 13\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Dividim:
+                    \[f(1) = \frac{120}{13} \approx 9{,}23 \text{ milers d'usuaris}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Per trobar el nombre d'usuaris en un moment concret, simplement substituïm el valor del temps (en aquest cas, mes 1) a la funció. El resultat ens dóna milers d'usuaris.
+                </div>
+                
+                <div class="resultat-final">
+                    📊 Resposta: Aproximadament 9.230 usuaris diaris
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat b) Taxa de variació mitjana entre mes 1 i mes 4</div>
+                
+                <div class="pas">
+                    <strong>Recordatori:</strong> La taxa de variació mitjana (TVM) entre dos punts \(a\) i \(b\) és:
+                    \[\text{TVM} = \frac{f(b) - f(a)}{b - a}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem \(f(4)\):
+                    \[f(4) = \frac{120 \cdot 4}{4^2 + 3 \cdot 4 + 9} = \frac{480}{16 + 12 + 9} = \frac{480}{37} \approx 12{,}97\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Ja sabem que \(f(1) = \frac{120}{13} \approx 9{,}23\)
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Apliquem la fórmula de la TVM:
+                    \[\text{TVM} = \frac{f(4) - f(1)}{4 - 1} = \frac{12{,}97 - 9{,}23}{3} \approx \frac{3{,}74}{3} \approx 1{,}25 \text{ milers/mes}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> La TVM ens indica com canvia de mitjana la funció en un interval. Un valor positiu significa que la funció està creixent en aquest interval. En aquest cas, l'aplicació guanya aproximadament 1.250 usuaris diaris per cada mes que passa.
+                </div>
+                
+                <div class="resultat-final">
+                    📈 Resposta: L'aplicació guanya aproximadament 1.250 usuaris diaris per mes entre el mes 1 i el 4
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat c) Asímptotes horitzontals</div>
+                
+                <div class="pas">
+                    <strong>Recordatori:</strong> Per trobar asímptotes horitzontals, calculem el límit quan \(x \to +\infty\).
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem el límit:
+                    \[\lim_{x \to +\infty} \frac{120x}{x^2 + 3x + 9}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Dividim numerador i denominador per \(x^2\) (el grau més alt):
+                    \[\lim_{x \to +\infty} \frac{\frac{120x}{x^2}}{\frac{x^2}{x^2} + \frac{3x}{x^2} + \frac{9}{x^2}} = \lim_{x \to +\infty} \frac{\frac{120}{x}}{1 + \frac{3}{x} + \frac{9}{x^2}}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Quan \(x \to +\infty\), els termes amb \(x\) al denominador tendeixen a 0:
+                    \[\lim_{x \to +\infty} \frac{0}{1 + 0 + 0} = 0\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Hi ha una asímptota horitzontal en \(y = 0\). Això significa que a llarg termini, el nombre d'usuaris actius diaris tendirà cap a zero. En el context del problema, això vol dir que l'aplicació perdrà rellevància amb el temps i deixarà d'utilitzar-se.
+                </div>
+                
+                <div class="resultat-final">
+                    📉 Resposta: Asímptota horitzontal y = 0. A llarg termini l'aplicació perdrà tots els usuaris.
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat d) Mes amb màxim nombre d'usuaris</div>
+                
+                <div class="pas">
+                    <strong>Recordatori:</strong> Per trobar màxims i mínims, calculem la derivada, la igualem a zero i resolem.
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem la derivada utilitzant la regla del quocient:
+                    \[f'(x) = \frac{(120) \cdot (x^2 + 3x + 9) - (120x) \cdot (2x + 3)}{(x^2 + 3x + 9)^2}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Desenvolupem el numerador:
+                    \[120x^2 + 360x + 1080 - 240x^2 - 360x = -120x^2 + 1080\]
+                    \[f'(x) = \frac{-120x^2 + 1080}{(x^2 + 3x + 9)^2} = \frac{120(9 - x^2)}{(x^2 + 3x + 9)^2}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Igualem a zero el numerador (el denominador sempre és positiu):
+                    \[120(9 - x^2) = 0 \Rightarrow 9 - x^2 = 0 \Rightarrow x^2 = 9 \Rightarrow x = 3 \text{ (descartem } x = -3)\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 4:</strong> Comprovem que és un màxim estudiant el signe de la derivada:
+                    <ul>
+                        <li>Si \(x < 3\): \(9 - x^2 > 0\), per tant \(f'(x) > 0\) → funció creixent</li>
+                        <li>Si \(x > 3\): \(9 - x^2 < 0\), per tant \(f'(x) < 0\) → funció decreixent</li>
+                    </ul>
+                    Com que canvia de creixent a decreixent, \(x = 3\) és un màxim.
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 5:</strong> Calculem el nombre d'usuaris en aquest punt:
+                    \[f(3) = \frac{120 \cdot 3}{3^2 + 3 \cdot 3 + 9} = \frac{360}{9 + 9 + 9} = \frac{360}{27} \approx 13{,}33 \text{ milers}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> El màxim nombre d'usuaris es produeix quan la derivada canvia de positiva a negativa. Això passa al mes 3, quan l'aplicació arriba al seu punt àlgid abans de començar a perdre usuaris.
+                </div>
+                
+                <div class="resultat-final">
+                    🎯 Resposta: El màxim es produeix al mes 3, amb aproximadament 13.330 usuaris diaris
+                </div>
+            </div>
+        </div>
+
+        <!-- SOLUCIÓ PROBLEMA 2 -->
+        <div class="solucio-problema">
+            <div class="solucio-titol">SOLUCIÓ PROBLEMA 2</div>
+            
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat a) TVM entre 5 i 8 desenes</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem \(B(5)\):
+                    \[B(5) = -2(5)^2 + 40(5) - 50 = -2(25) + 200 - 50 = -50 + 200 - 50 = 100\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem \(B(8)\):
+                    \[B(8) = -2(8)^2 + 40(8) - 50 = -2(64) + 320 - 50 = -128 + 320 - 50 = 142\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Apliquem la fórmula de la TVM:
+                    \[\text{TVM} = \frac{B(8) - B(5)}{8 - 5} = \frac{142 - 100}{3} = \frac{42}{3} = 14 \text{ milers €/desena}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> La TVM ens diu que, de mitjana, per cada desena addicional de mobles venuts (entre 5 i 8 desenes), el benefici augmenta 14.000 euros.
+                </div>
+                
+                <div class="resultat-final">
+                    💰 Resposta: El benefici augmenta de mitjana 14.000 € per cada desena de mobles venuts
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat b) Nombre de mobles per maximitzar el benefici</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem la derivada de \(B(x)\):
+                    \[B'(x) = -4x + 40\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Igualem la derivada a zero:
+                    \[-4x + 40 = 0 \Rightarrow 4x = 40 \Rightarrow x = 10\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Comprovem que és un màxim calculant la segona derivada:
+                    \[B''(x) = -4 < 0\]
+                    Com que la segona derivada és negativa, \(x = 10\) és efectivament un màxim.
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> En funcions quadràtiques amb coeficient negatiu al terme de segon grau (paràbola oberta cap avall), el vèrtex és un màxim. El benefici màxim s'obté venent 10 desenes = 100 mobles.
+                </div>
+                
+                <div class="resultat-final">
+                    🎯 Resposta: S'han de vendre 10 desenes = 100 mobles
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat c) Benefici màxim</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Substituïm \(x = 10\) a la funció de benefici:
+                    \[B(10) = -2(10)^2 + 40(10) - 50\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem:
+                    \[B(10) = -2(100) + 400 - 50 = -200 + 400 - 50 = 150 \text{ milers d'euros}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Un cop sabem on es produeix el màxim (10 desenes), només cal avaluar la funció en aquest punt per saber quin és el benefici màxim que pot obtenir l'empresa.
+                </div>
+                
+                <div class="resultat-final">
+                    💵 Resposta: El benefici màxim és de 150.000 €
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat d) Intervals de creixement i decreixement</div>
+                
+                <div class="pas">
+                    <strong>Recordatori:</strong> La funció creix on \(B'(x) > 0\) i decreix on \(B'(x) < 0\).
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Ja sabem que \(B'(x) = -4x + 40\) i que \(B'(x) = 0\) quan \(x = 10\).
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Estudiem el signe de la derivada:
+                    <ul>
+                        <li>\(B'(x) > 0 \Rightarrow -4x + 40 > 0 \Rightarrow -4x > -40 \Rightarrow x < 10\)</li>
+                        <li>\(B'(x) < 0 \Rightarrow -4x + 40 < 0 \Rightarrow -4x < -40 \Rightarrow x > 10\)</li>
+                    </ul>
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> El benefici augmenta quan es venen menys de 100 mobles (fins arribar al punt òptim), i després disminueix si se'n venen més. Això pot ser degut a costos de producció que creixen més ràpidament que els ingressos quan la producció és massa alta.
+                </div>
+                
+                <div class="resultat-final">
+                    📊 Resposta: Creixent a (-∞, 10) i Decreixent a (10, +∞)
+                </div>
+            </div>
+        </div>
+
+        <!-- SOLUCIÓ PROBLEMA 3 -->
+        <div class="solucio-problema">
+            <div class="solucio-titol">SOLUCIÓ PROBLEMA 3</div>
+            
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat a) Temperatura inicial</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> La temperatura inicial correspon a \(t = 0\). Com que \(0 \leq 0 \leq 4\), utilitzem la primera expressió:
+                    \[T(0) = 50(0) + 20 = 20 \text{ °C}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> En funcions definides a trossos, hem de comprovar a quin interval pertany el valor que volem calcular i utilitzar l'expressió corresponent.
+                </div>
+                
+                <div class="resultat-final">
+                    🌡️ Resposta: 20 °C
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat b) Continuïtat en t = 4</div>
+                
+                <div class="pas">
+                    <strong>Recordatori:</strong> Per estudiar la continuïtat en un punt, cal comprovar que:
+                    <ol>
+                        <li>Existeix \(f(a)\)</li>
+                        <li>Existeix \(\lim_{x \to a} f(x)\)</li>
+                        <li>\(\lim_{x \to a} f(x) = f(a)\)</li>
+                    </ol>
+                    En funcions a trossos, calculem límits laterals.
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem el límit per l'esquerra (\(t \to 4^-\)):
+                    \[\lim_{t \to 4^-} T(t) = \lim_{t \to 4^-} (50t + 20) = 50(4) + 20 = 220\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem el límit per la dreta (\(t \to 4^+\)):
+                    \[\lim_{t \to 4^+} T(t) = \lim_{t \to 4^+} [300 - 20(t-4)^2] = 300 - 20(0)^2 = 300\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Calculem \(T(4)\). Com que \(t = 4\) pertany a l'interval \([0, 4]\), utilitzem la primera expressió:
+                    \[T(4) = 50(4) + 20 = 220\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 4:</strong> Comparem:
+                    \[\lim_{t \to 4^-} T(t) = 220 \neq 300 = \lim_{t \to 4^+} T(t)\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Com que els límits laterals són diferents, la funció NO és contínua en \(t = 4\). Hi ha un salt de 80 °C. En el context real, això podria representar un canvi sobtat en el procés de cocció (per exemple, l'activació d'un mecanisme addicional de calor).
+                </div>
+                
+                <div class="resultat-final">
+                    ❌ Resposta: NO és contínua en t = 4. Hi ha un salt de 80 °C (de 220 °C a 300 °C)
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat c) Taxa de variació instantània a t = 5</div>
+                
+                <div class="pas">
+                    <strong>Recordatori:</strong> La taxa de variació instantània és la derivada de la funció en aquell punt.
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Com que \(t = 5 > 4\), utilitzem la segona expressió: \(T(t) = 300 - 20(t-4)^2\)
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem la derivada:
+                    \[T'(t) = -20 \cdot 2(t-4) = -40(t-4)\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Avaluem en \(t = 5\):
+                    \[T'(5) = -40(5-4) = -40(1) = -40 \text{ °C/h}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> El signe negatiu indica que la temperatura està disminuint. A les 5 hores, la temperatura està baixant a un ritme de 40 graus per hora.
+                </div>
+                
+                <div class="resultat-final">
+                    📉 Resposta: -40 °C/h (la temperatura disminueix 40 graus per hora)
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat d) Moment en què comença a disminuir</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Estudiem la derivada en l'interval \([0, 4]\):
+                    \[T'(t) = 50 > 0\]
+                    La temperatura sempre creix en aquest interval.
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Estudiem la derivada en l'interval \((4, +\infty)\):
+                    \[T'(t) = -40(t-4)\]
+                    Per a \(t > 4\), tenim que \(t - 4 > 0\), per tant \(T'(t) = -40(t-4) < 0\)
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> La temperatura creix constantment durant les primeres 4 hores. Just després de \(t = 4\), la derivada passa a ser negativa, indicant que la temperatura comença a disminuir.
+                </div>
+                
+                <div class="resultat-final">
+                    ⏰ Resposta: La temperatura comença a disminuir just després de t = 4 hores
+                </div>
+            </div>
+        </div>
+
+        <!-- SOLUCIÓ PROBLEMA 4 -->
+        <div class="solucio-problema">
+            <div class="solucio-titol">SOLUCIÓ PROBLEMA 4</div>
+            
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat a) Ingressos primera setmana</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem \(f(1)\):
+                    \[f(1) = 500e^{-0{,}2 \cdot 1} = 500e^{-0{,}2}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem el valor numèric (amb calculadora):
+                    \[e^{-0{,}2} \approx 0{,}8187\]
+                    \[f(1) \approx 500 \cdot 0{,}8187 \approx 409{,}35 \text{ milers d'euros}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Les funcions exponencials decreixents (\(e^{-kx}\) amb \(k > 0\)) modelen processos que disminueixen ràpidament al principi i després més lentament.
+                </div>
+                
+                <div class="resultat-final">
+                    🎬 Resposta: Aproximadament 409.350 €
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat b) TVM entre setmana 2 i setmana 5</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem \(f(2)\):
+                    \[f(2) = 500e^{-0{,}4} \approx 500 \cdot 0{,}6703 \approx 335{,}16\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem \(f(5)\):
+                    \[f(5) = 500e^{-1} \approx 500 \cdot 0{,}3679 \approx 183{,}94\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Calculem la TVM:
+                    \[\text{TVM} = \frac{f(5) - f(2)}{5 - 2} = \frac{183{,}94 - 335{,}16}{3} \approx \frac{-151{,}22}{3} \approx -50{,}41 \text{ milers €/setmana}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> El signe negatiu indica que els ingressos estan disminuint. De mitjana, la pel·lícula perd 50.410 € d'ingressos cada setmana en aquest interval.
+                </div>
+                
+                <div class="resultat-final">
+                    📉 Resposta: Els ingressos disminueixen de mitjana 50.410 € per setmana
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat c) Taxa de decreixement a la setmana 3</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem la derivada de \(f(x) = 500e^{-0{,}2x}\):
+                    \[f'(x) = 500 \cdot (-0{,}2) \cdot e^{-0{,}2x} = -100e^{-0{,}2x}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Avaluem en \(x = 3\):
+                    \[f'(3) = -100e^{-0{,}6} \approx -100 \cdot 0{,}5488 \approx -54{,}88 \text{ milers €/setmana}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> La derivada d'una funció exponencial \(ae^{kx}\) és \(k \cdot ae^{kx}\). El valor negatiu confirma que els ingressos estan disminuint a la setmana 3.
+                </div>
+                
+                <div class="resultat-final">
+                    💸 Resposta: Els ingressos disminueixen a un ritme de 54.880 € per setmana
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat d) Comportament a llarg termini</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem el límit quan \(x \to +\infty\):
+                    \[\lim_{x \to +\infty} 500e^{-0{,}2x}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Recordem que \(e^{-0{,}2x} = \frac{1}{e^{0{,}2x}}\), i quan \(x \to +\infty\), \(e^{0{,}2x} \to +\infty\):
+                    \[\lim_{x \to +\infty} 500e^{-0{,}2x} = \lim_{x \to +\infty} \frac{500}{e^{0{,}2x}} = \frac{500}{+\infty} = 0\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Hi ha una asímptota horitzontal en \(y = 0\). Això significa que, amb el temps, els ingressos de la pel·lícula tendiran a zero (la pel·lícula deixarà de projectar-se als cinemes i no generarà més ingressos).
+                </div>
+                
+                <div class="resultat-final">
+                    🎥 Resposta: Asímptota horitzontal y = 0. Els ingressos tendeixen a zero a llarg termini
+                </div>
+            </div>
+        </div>
+
+        <!-- SOLUCIÓ PROBLEMA 5 -->
+        <div class="solucio-problema">
+            <div class="solucio-titol">SOLUCIÓ PROBLEMA 5</div>
+            
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat a) Altura inicial</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem \(h(0)\):
+                    \[h(0) = 5\sqrt{0 + 1} + 2 = 5\sqrt{1} + 2 = 5(1) + 2 = 7 \text{ cm}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> L'altura en el moment de la plantació és de 7 cm. Això indica que la "planta" ja té una certa mida inicial (podria ser una llavor germinada o un esqueig).
+                </div>
+                
+                <div class="resultat-final">
+                    🌱 Resposta: 7 cm
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat b) Taxa de creixement a la setmana 8</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Rescrivim la funció per derivar-la:
+                    \[h(t) = 5(t + 1)^{1/2} + 2\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Apliquem la regla de la cadena:
+                    \[h'(t) = 5 \cdot \frac{1}{2}(t + 1)^{-1/2} = \frac{5}{2\sqrt{t + 1}}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Avaluem en \(t = 8\):
+                    \[h'(8) = \frac{5}{2\sqrt{8 + 1}} = \frac{5}{2\sqrt{9}} = \frac{5}{2 \cdot 3} = \frac{5}{6} \approx 0{,}83 \text{ cm/setmana}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> La derivada d'una arrel quadrada \(\sqrt{u}\) és \(\frac{1}{2\sqrt{u}} \cdot u'\). A la setmana 8, la planta creix aproximadament 0,83 cm per setmana.
+                </div>
+                
+                <div class="resultat-final">
+                    📏 Resposta: La planta creix aproximadament 0,83 cm per setmana
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat c) Estudi del creixement</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Ja sabem que:
+                    \[h'(t) = \frac{5}{2\sqrt{t + 1}}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Analitzem el signe de la derivada:
+                    <ul>
+                        <li>El numerador és 5 > 0</li>
+                        <li>El denominador és \(2\sqrt{t + 1}\). Com que \(t \geq 0\), tenim \(t + 1 \geq 1\), per tant \(\sqrt{t + 1} \geq 1 > 0\)</li>
+                    </ul>
+                    Per tant, \(h'(t) > 0\) per a tot \(t \geq 0\).
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Com que la derivada és sempre positiva, la funció és sempre creixent. Això significa que la planta no para mai de créixer (encara que cada cop més lentament, ja que la derivada va disminuint). Això és típic del creixement biològic: ràpid al principi i progressivament més lent.
+                </div>
+                
+                <div class="resultat-final">
+                    ✅ Resposta: Sí, la funció és sempre creixent en tot el seu domini
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat d) TVM entre setmana 0 i setmana 15</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Ja sabem que \(h(0) = 7\) cm
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem \(h(15)\):
+                    \[h(15) = 5\sqrt{15 + 1} + 2 = 5\sqrt{16} + 2 = 5(4) + 2 = 20 + 2 = 22 \text{ cm}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Calculem la TVM:
+                    \[\text{TVM} = \frac{h(15) - h(0)}{15 - 0} = \frac{22 - 7}{15} = \frac{15}{15} = 1 \text{ cm/setmana}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> De mitjana, durant les primeres 15 setmanes, la planta creix 1 cm per setmana. Aquest valor és una mitjana: al principi creix més ràpidament i després més lentament.
+                </div>
+                
+                <div class="resultat-final">
+                    🌿 Resposta: L'altura augmenta de mitjana 1 cm per setmana
+                </div>
+            </div>
+        </div>
+
+        <!-- SOLUCIÓ PROBLEMA 6 -->
+        <div class="solucio-problema">
+            <div class="solucio-titol">SOLUCIÓ PROBLEMA 6</div>
+            
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat a) Nombre inicial de bacteris</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem \(N(0)\):
+                    \[N(0) = \frac{8(0) + 16}{0 + 2} = \frac{16}{2} = 8 \text{ milions de bacteris}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> El cultiu comença amb 8 milions de bacteris.
+                </div>
+                
+                <div class="resultat-final">
+                    🦠 Resposta: 8 milions de bacteris
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat b) Asímptotes horitzontals</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem el límit quan \(t \to +\infty\):
+                    \[\lim_{t \to +\infty} \frac{8t + 16}{t + 2}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Dividim numerador i denominador per \(t\):
+                    \[\lim_{t \to +\infty} \frac{8 + \frac{16}{t}}{1 + \frac{2}{t}} = \frac{8 + 0}{1 + 0} = 8\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Hi ha una asímptota horitzontal en \(y = 8\). Això significa que la població de bacteris tendeix a estabilitzar-se al voltant de 8 milions. En el context biològic, això indica que hi ha un límit de capacitat del cultiu (nutrients limitats, espai, etc.) que impedeix un creixement indefinit.
+                </div>
+                
+                <div class="resultat-final">
+                    📊 Resposta: Asímptota horitzontal y = 8. La població tendeix a 8 milions
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat c) Derivada i creixement</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Abans de derivar, observem que podem simplificar:
+                    \[N(t) = \frac{8t + 16}{t + 2} = \frac{8(t + 2)}{t + 2} = 8 \quad \text{(si } t \neq -2\text{)}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Si \(N(t) = 8\) és una funció constant, llavors:
+                    \[N'(t) = 0\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Com que \(N'(t) = 0\) per a tot \(t \geq 0\), la funció ni creix ni decreix.
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Aquesta és una situació particular on la funció racional es simplifica a una constant. Això significa que el nombre de bacteris es manté sempre constant en 8 milions (la població està en equilibri des del principi).
+                </div>
+                
+                <div class="resultat-final">
+                    ➡️ Resposta: N'(t) = 0. La població és constant (no creix ni decreix)
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat d) Taxa de creixement màxima</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Com que \(N'(t) = 0\) per a tot \(t\), no hi ha cap moment amb taxa de creixement màxima (ni mínima).
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> La taxa de creixement és sempre zero. No hi ha moments de creixement màxim perquè la població està en equilibri estable.
+                </div>
+                
+                <div class="resultat-final">
+                    🔄 Resposta: No hi ha taxa de creixement màxima. La taxa és sempre 0 (població constant)
+                </div>
+            </div>
+        </div>
+
+        <!-- SOLUCIÓ PROBLEMA 7 -->
+        <div class="solucio-problema">
+            <div class="solucio-titol">SOLUCIÓ PROBLEMA 7</div>
+            
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat a) Velocitat inicial</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem \(v(0)\):
+                    \[v(0) = 30(1 - e^0) = 30(1 - 1) = 30(0) = 0 \text{ m/s}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> El vehicle parteix del repòs (velocitat inicial zero), cosa lògica en una prova d'acceleració.
+                </div>
+                
+                <div class="resultat-final">
+                    🚗 Resposta: 0 m/s (el vehicle parteix del repòs)
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat b) Acceleració als 2 segons</div>
+                
+                <div class="pas">
+                    <strong>Recordatori:</strong> L'acceleració és la derivada de la velocitat respecte del temps.
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem la derivada de \(v(t) = 30(1 - e^{-0{,}5t})\):
+                    \[v'(t) = 30 \cdot [0 - (-0{,}5)e^{-0{,}5t}] = 30 \cdot 0{,}5 \cdot e^{-0{,}5t} = 15e^{-0{,}5t}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Avaluem en \(t = 2\):
+                    \[a(2) = v'(2) = 15e^{-1} \approx 15 \cdot 0{,}3679 \approx 5{,}52 \text{ m/s}^2\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Als 2 segons, el vehicle té una acceleració d'aproximadament 5,52 m/s². Aquesta acceleració és positiva, indicant que la velocitat continua augmentant.
+                </div>
+                
+                <div class="resultat-final">
+                    ⚡ Resposta: Aproximadament 5,52 m/s²
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat c) Velocitat màxima</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem el límit de la velocitat quan \(t \to +\infty\):
+                    \[\lim_{t \to +\infty} 30(1 - e^{-0{,}5t})\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Com que \(e^{-0{,}5t} \to 0\) quan \(t \to +\infty\):
+                    \[\lim_{t \to +\infty} 30(1 - e^{-0{,}5t}) = 30(1 - 0) = 30 \text{ m/s}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Convertim a km/h (opcional):
+                    \[30 \text{ m/s} \times 3{,}6 = 108 \text{ km/h}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Hi ha una asímptota horitzontal en \(y = 30\). La velocitat màxima que pot assolir el vehicle és de 30 m/s (108 km/h). Aquesta velocitat s'aproxima asimptòticament però mai s'assoleix exactament.
+                </div>
+                
+                <div class="resultat-final">
+                    🏎️ Resposta: 30 m/s (108 km/h)
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat d) Signe de l'acceleració</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Ja sabem que l'acceleració és:
+                    \[a(t) = v'(t) = 15e^{-0{,}5t}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Analitzem el signe:
+                    <ul>
+                        <li>El coeficient 15 és positiu</li>
+                        <li>\(e^{-0{,}5t} > 0\) per a tot valor de \(t\)</li>
+                    </ul>
+                    Per tant, \(a(t) > 0\) per a tot \(t \geq 0\).
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> L'acceleració és sempre positiva, cosa que significa que el vehicle sempre està accelerant (encara que cada cop menys). La velocitat sempre augmenta, apropant-se progressivament a la velocitat màxima de 30 m/s sense arribar-hi mai exactament.
+                </div>
+                
+                <div class="resultat-final">
+                    ✅ Resposta: Sí, l'acceleració és sempre positiva. El vehicle sempre està accelerant
+                </div>
+            </div>
+        </div>
+
+        <!-- SOLUCIÓ PROBLEMA 8 -->
+        <div class="solucio-problema">
+            <div class="solucio-titol">SOLUCIÓ PROBLEMA 8</div>
+            
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat a) Cost fix</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> El cost fix és el cost quan \(x = 0\):
+                    \[C(0) = 0{,}01(0)^3 - 0{,}6(0)^2 + 15(0) + 200 = 200 \text{ €}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Els costos fixos són aquells que l'empresa ha de pagar independentment del nivell de producció (lloguer, salaris base, etc.). En aquest cas són 200 €.
+                </div>
+                
+                <div class="resultat-final">
+                    💶 Resposta: 200 € (costos fixos de l'empresa)
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat b) Cost marginal amb 20 articles</div>
+                
+                <div class="pas">
+                    <strong>Recordatori:</strong> El cost marginal és la derivada de la funció de cost. Indica el cost aproximat de produir una unitat addicional.
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem la derivada:
+                    \[C'(x) = 0{,}03x^2 - 1{,}2x + 15\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Avaluem en \(x = 20\):
+                    \[C'(20) = 0{,}03(20)^2 - 1{,}2(20) + 15 = 0{,}03(400) - 24 + 15 = 12 - 24 + 15 = 3 \text{ €/article}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Quan ja s'han produït 20 articles, produir-ne un més (el número 21) costarà aproximadament 3 € addicionals.
+                </div>
+                
+                <div class="resultat-final">
+                    💰 Resposta: 3 €/article (cost de produir l'article número 21)
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat c) Quantitat amb cost marginal mínim</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Per trobar el mínim del cost marginal, derivem \(C'(x)\):
+                    \[C''(x) = 0{,}06x - 1{,}2\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Igualem a zero:
+                    \[0{,}06x - 1{,}2 = 0 \Rightarrow 0{,}06x = 1{,}2 \Rightarrow x = \frac{1{,}2}{0{,}06} = 20\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Comprovem que és un mínim:
+                    \[C'''(x) = 0{,}06 > 0\]
+                    Com que la tercera derivada és positiva, \(x = 20\) és un mínim.
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 4:</strong> Calculem el cost marginal mínim:
+                    \[C'(20) = 3 \text{ €/article}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> El cost marginal és mínim quan es produeixen 20 articles. Això significa que és en aquest punt on produir una unitat addicional costa menys. Per sota i per sobre d'aquesta quantitat, el cost marginal és més alt.
+                </div>
+                
+                <div class="resultat-final">
+                    🎯 Resposta: 20 articles (amb un cost marginal de 3 €/article)
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat d) TVM del cost entre 10 i 15 articles</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem \(C(10)\):
+                    \[C(10) = 0{,}01(1000) - 0{,}6(100) + 15(10) + 200 = 10 - 60 + 150 + 200 = 300 \text{ €}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem \(C(15)\):
+                    \[C(15) = 0{,}01(3375) - 0{,}6(225) + 15(15) + 200 = 33{,}75 - 135 + 225 + 200 = 323{,}75 \text{ €}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Calculem la TVM:
+                    \[\text{TVM} = \frac{C(15) - C(10)}{15 - 10} = \frac{323{,}75 - 300}{5} = \frac{23{,}75}{5} = 4{,}75 \text{ €/article}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Entre 10 i 15 articles, el cost augmenta de mitjana 4,75 € per cada article addicional produït.
+                </div>
+                
+                <div class="resultat-final">
+                    📊 Resposta: El cost augmenta de mitjana 4,75 € per article
+                </div>
+            </div>
+        </div>
+
+        <!-- SOLUCIÓ PROBLEMA 9 -->
+        <div class="solucio-problema">
+            <div class="solucio-titol">SOLUCIÓ PROBLEMA 9</div>
+            
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat a) Continuïtat en t = 2</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem el límit per l'esquerra (\(t \to 2^-\)):
+                    \[\lim_{t \to 2^-} C(t) = \lim_{t \to 2^-} 4t^2 = 4(2)^2 = 16\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem el límit per la dreta (\(t \to 2^+\)):
+                    \[\lim_{t \to 2^+} C(t) = \lim_{t \to 2^+} \frac{32}{t} = \frac{32}{2} = 16\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Calculem \(C(2)\). Com que \(t = 2\) pertany a \([0, 2]\):
+                    \[C(2) = 4(2)^2 = 16\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 4:</strong> Comprovem:
+                    \[\lim_{t \to 2^-} C(t) = \lim_{t \to 2^+} C(t) = C(2) = 16\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Com que tots tres valors coincideixen, la funció és contínua en \(t = 2\). Això és important en el context mèdic: no hi ha salts bruscos en la concentració del medicament.
+                </div>
+                
+                <div class="resultat-final">
+                    ✅ Resposta: SÍ és contínua en t = 2 (els tres valors són iguals a 16 mg/L)
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat b) Concentració màxima</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Estudiem l'interval \([0, 2]\):
+                    \[C(t) = 4t^2 \Rightarrow C'(t) = 8t\]
+                    Com que \(C'(t) > 0\) per a \(t > 0\), la funció és sempre creixent en aquest interval.
+                    El màxim en aquest interval és: \(C(2) = 16\)
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Estudiem l'interval \((2, +\infty)\):
+                    \[C(t) = \frac{32}{t} \Rightarrow C'(t) = -\frac{32}{t^2} < 0\]
+                    La funció és sempre decreixent en aquest interval.
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Conclusió:
+                    La concentració creix fins a \(t = 2\) i després decreix. Per tant, el màxim absolut és en \(t = 2\).
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> La concentració màxima del medicament en sang és de 16 mg/L i es produeix a les 2 hores després de l'administració. Aquest és el moment de màxima efectivitat del medicament.
+                </div>
+                
+                <div class="resultat-final">
+                    💊 Resposta: 16 mg/L a les 2 hores
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat c) Taxa de variació a les 4 hores</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Com que \(t = 4 > 2\), utilitzem \(C(t) = \frac{32}{t}\)
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem la derivada:
+                    \[C'(t) = -\frac{32}{t^2}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Avaluem en \(t = 4\):
+                    \[C'(4) = -\frac{32}{(4)^2} = -\frac{32}{16} = -2 \text{ mg/(L·h)}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> A les 4 hores, la concentració del medicament està disminuint a un ritme de 2 mg/L per hora. El signe negatiu indica que la concentració està baixant (el cos està eliminant el medicament).
+                </div>
+                
+                <div class="resultat-final">
+                    📉 Resposta: -2 mg/(L·h) (la concentració disminueix 2 mg/L cada hora)
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat d) Quan baixa per sota de 2 mg/L</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Comprovem l'interval \([0, 2]\):
+                    \[4t^2 < 2 \Rightarrow t^2 < 0{,}5 \Rightarrow t < \sqrt{0{,}5} \approx 0{,}71\]
+                    Però en aquest interval la funció està creixent, així que després de \(t \approx 0{,}71\) sempre serà \(\geq 2\).
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Comprovem l'interval \((2, +\infty)\):
+                    \[\frac{32}{t} < 2 \Rightarrow 32 < 2t \Rightarrow t > 16\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Durant les primeres 0,71 hores la concentració és inferior a 2 mg/L, però després puja fins a 16 mg/L a les 2 hores. A partir d'aquí comença a baixar, i torna a ser inferior a 2 mg/L després de 16 hores. Aquest seria el moment en què el medicament ja pràcticament no té efecte.
+                </div>
+                
+                <div class="resultat-final">
+                    ⏰ Resposta: La concentració baixa per sota de 2 mg/L després de 16 hores
+                </div>
+            </div>
+        </div>
+
+        <!-- SOLUCIÓ PROBLEMA 10 -->
+        <div class="solucio-problema">
+            <div class="solucio-titol">SOLUCIÓ PROBLEMA 10</div>
+            
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat a) Preu inicial</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem \(P(0)\):
+                    \[P(0) = 800 - 120\ln(0 + 1) = 800 - 120\ln(1) = 800 - 120(0) = 800 \text{ €}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Recordem que \(\ln(1) = 0\). El producte es llança al mercat a un preu de 800 €.
+                </div>
+                
+                <div class="resultat-final">
+                    💻 Resposta: 800 €
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat b) TVM del preu entre mes 0 i mes 6</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Ja sabem que \(P(0) = 800\) €
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Calculem \(P(6)\):
+                    \[P(6) = 800 - 120\ln(7) \approx 800 - 120(1{,}9459) \approx 800 - 233{,}51 = 566{,}49 \text{ €}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Calculem la TVM:
+                    \[\text{TVM} = \frac{P(6) - P(0)}{6 - 0} = \frac{566{,}49 - 800}{6} = \frac{-233{,}51}{6} \approx -38{,}92 \text{ €/mes}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> El preu disminueix de mitjana 38,92 € cada mes durant els primers sis mesos. Això és típic dels productes tecnològics, que baixen de preu amb el temps.
+                </div>
+                
+                <div class="resultat-final">
+                    📉 Resposta: El preu disminueix de mitjana 38,92 € per mes
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat c) Ritme de disminució als 11 mesos</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Calculem la derivada de \(P(t) = 800 - 120\ln(t + 1)\):
+                    \[P'(t) = -120 \cdot \frac{1}{t + 1} = -\frac{120}{t + 1}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Avaluem en \(t = 11\):
+                    \[P'(11) = -\frac{120}{11 + 1} = -\frac{120}{12} = -10 \text{ €/mes}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Als 11 mesos del llançament, el preu està disminuint a un ritme de 10 € per mes. Observem que aquesta taxa és menor que la taxa mitjana dels primers 6 mesos (38,92 €/mes), cosa que té sentit perquè les funcions logarítmiques decreixen cada cop més lentament.
+                </div>
+                
+                <div class="resultat-final">
+                    📊 Resposta: El preu està disminuint a 10 € per mes
+                </div>
+            </div>
+
+            <div class="solucio-apartat">
+                <div class="solucio-apartat-titol">Apartat d) Possibilitat que el preu sigui zero</div>
+                
+                <div class="pas">
+                    <strong>Pas 1:</strong> Resolem \(P(t) = 0\):
+                    \[800 - 120\ln(t + 1) = 0\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 2:</strong> Aïllem el logaritme:
+                    \[120\ln(t + 1) = 800 \Rightarrow \ln(t + 1) = \frac{800}{120} = \frac{20}{3}\]
+                </div>
+                
+                <div class="pas">
+                    <strong>Pas 3:</strong> Apliquem l'exponencial a ambdós costats:
+                    \[t + 1 = e^{20/3} \approx 666{,}02\]
+                    \[t \approx 665 \text{ mesos} \approx 55{,}4 \text{ anys}\]
+                </div>
+                
+                <div class="explicacio">
+                    <strong>Explicació:</strong> Matemàticament, el preu arribaria a zero als 665 mesos (aproximadament 55 anys). No obstant això, en la pràctica, el producte tecnològic ja estaria completament obsolet molt abans d'aquest temps i deixaria de vendre's. Aquest càlcul ens mostra una limitació dels models matemàtics: són útils dins d'un rang raonable, però poden donar resultats poc realistes fora d'aquest rang.
+                </div>
+                
+                <div class="resultat-final">
+                    🔮 Resposta: Teòricament als 665 mesos (55 anys), però en la pràctica no té sentit
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
